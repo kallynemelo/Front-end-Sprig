@@ -53,21 +53,5 @@ O Sprig é uma plataforma web criada para aprimorar o processo de **controle de 
 ```bash
 npm install
 
-## 🌐 Principais Funcionalidades
-
-- Design moderno e responsivo  
-- Navegação fluida entre módulos  
-- Tabelas e formulários funcionais  
-- Componentes reutilizáveis  
-- Sidebar, header e cards estilizados  
-- Pronto para integração com API  
-- Estrutura escalável para expansão futura  
-
----
-
-## 📊 Conclusão
-
-O front-end do Sprig entregou uma interface completa, bem estruturada e profissional, evidenciando domínio em **React + TypeScript**, boas práticas de design, componentização e navegação.  
-A aplicação está pronta para integração com back-end e continuidade de desenvolvimento.
 
 
