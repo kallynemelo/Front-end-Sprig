@@ -52,6 +52,8 @@ O Sprig é uma plataforma web criada para aprimorar o processo de **controle de 
 ### 1. Instalar dependências
 ```bash
 npm install
+npm run dev
+
 
 
 
