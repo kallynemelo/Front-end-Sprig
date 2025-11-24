@@ -1,4 +1,4 @@
-# 🌾 Projeto de Desenvolvimento – Sprig
+# 🌾 Projeto Sprig - Desenvolvimento Front-end
 
 ## 📖 Descrição Geral
 Este repositório representa o **front-end do sistema Sprig**, desenvolvido com **React + Vite + TypeScript**.
