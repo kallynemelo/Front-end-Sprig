@@ -21,7 +21,7 @@ const LoginCard = () => {
     <div className="w-full max-w-md mx-auto">
       <div className="bg-card rounded-[3rem] px-8 py-12 md:px-12 md:py-16 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
-          <img src={logo} alt="Sprig Logo" className="h-16 md:h-20 mb-4" />
+          <img src={logo} alt="Sprig Logo" className="h-28 md:h-32 mb-4"/>
           <p className="text-card-foreground text-center text-sm md:text-base max-w-xs">
             Transparência e Eficiência no Ciclo das Sementes.
           </p>
