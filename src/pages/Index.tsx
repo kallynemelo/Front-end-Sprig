@@ -5,15 +5,17 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col"
+      className="min-h-screen flex flex-col bg-background text-foreground bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/src/assets/teladefundoinicio.png')" }}
     >
       <Header />
-      
+
       <main className="flex-1 flex items-center justify-center px-4 py-8 md:py-12">
-        <LoginCard />
+        <div className="bg-card text-card-foreground rounded-[var(--radius)] shadow-lg p-6 border border-border">
+          <LoginCard />
+        </div>
       </main>
-      
+
       <Footer />
     </div>
   );

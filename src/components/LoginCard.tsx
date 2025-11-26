@@ -1,16 +1,19 @@
-import { useState } from "react";
+import React, { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import govbrLogo from "@/assets/govbr-logo.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const LoginCard = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = (e: FormEvent) => {
     e.preventDefault();
     console.log("Login attempt with:", { email, password });
+    navigate("/dashboard");
   };
 
   const handleGovBrLogin = () => {
@@ -21,7 +24,7 @@ const LoginCard = () => {
     <div className="w-full max-w-md mx-auto">
       <div className="bg-card rounded-[3rem] px-8 py-12 md:px-12 md:py-16 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
-          <img src={logo} alt="Sprig Logo" className="h-28 md:h-32 mb-4"/>
+          <img src={logo} alt="Sprig Logo" className="h-16 md:h-20 mb-4" />
           <p className="text-card-foreground text-center text-sm md:text-base max-w-xs">
             Transparência e Eficiência no Ciclo das Sementes.
           </p>
@@ -40,7 +43,7 @@ const LoginCard = () => {
             className="bg-accent text-accent-foreground placeholder:text-accent-foreground/70 border-0 h-12 rounded-full px-6"
             required
           />
-          
+
           <Input
             type="password"
             placeholder="SENHA"
@@ -51,22 +54,23 @@ const LoginCard = () => {
           />
 
           <div className="text-right">
-            <a 
-              href="#esqueci-senha" 
+            <a
+              href="#"
               className="text-xs text-primary-foreground hover:underline font-medium"
             >
               ESQUECI MINHA SENHA
             </a>
           </div>
 
-          <Button 
+          <Button
             type="submit"
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 rounded-full text-base"
           >
             ENTRAR
           </Button>
 
-          <Button
+          {/* ✅ BOTÃO GOV.BR ADICIONADO AQUI */}
+          <Button 
             type="button"
             onClick={handleGovBrLogin}
             className="w-full bg-govbr hover:bg-govbr/90 text-secondary-foreground font-medium h-12 rounded-full text-base flex items-center justify-center gap-2"
@@ -76,8 +80,8 @@ const LoginCard = () => {
           </Button>
 
           <div className="text-center pt-2">
-            <a 
-              href="#criar-conta" 
+            <a
+              href="#"
               className="text-sm text-primary-foreground hover:underline font-medium"
             >
               CRIAR CONTA

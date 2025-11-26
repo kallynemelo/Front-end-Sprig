@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NavLink } from "./NavLink";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -9,20 +10,25 @@ const Header = () => {
           <img src={logo} alt="Sprig Logo" className="h-12 md:h-16" />
         </Link>
         <nav className="hidden md:flex items-center gap-4">
-          <Link 
-            to="/sobre" 
-            className="px-8 py-3 rounded-full bg-card text-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+          <NavLink
+            to="/sobre"
+            className="px-8 py-3 rounded-full text-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+            activeClassName="bg-card"
           >
             SOBRE
-          </Link>
-          <a 
-            href="#servicos" 
-            className="px-8 py-3 rounded-full text-foreground text-sm font-medium hover:opacity-80 transition-opacity"
+          </NavLink>
+
+          {/* ALTERADO: agora SERVIÇOS usa NavLink */}
+          <NavLink
+            to="/servicos"
+            className="px-8 py-3 rounded-full text-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+            activeClassName="bg-card"
           >
             SERVIÇOS
-          </a>
-          <a 
-            href="#contato" 
+          </NavLink>
+
+          <a
+            href="#contato"
             className="px-8 py-3 rounded-full text-foreground text-sm font-medium hover:opacity-80 transition-opacity"
           >
             CONTATO
