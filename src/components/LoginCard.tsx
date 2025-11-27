@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import govbrLogo from "@/assets/govbr-logo.png";
@@ -10,7 +10,7 @@ const LoginCard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e: FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Login attempt with:", { email, password });
     navigate("/dashboard");
@@ -43,7 +43,7 @@ const LoginCard = () => {
             className="bg-accent text-accent-foreground placeholder:text-accent-foreground/70 border-0 h-12 rounded-full px-6"
             required
           />
-
+          
           <Input
             type="password"
             placeholder="SENHA"
@@ -54,23 +54,22 @@ const LoginCard = () => {
           />
 
           <div className="text-right">
-            <a
-              href="#"
+            <a 
+              href="#esqueci-senha" 
               className="text-xs text-primary-foreground hover:underline font-medium"
             >
               ESQUECI MINHA SENHA
             </a>
           </div>
 
-          <Button
+          <Button 
             type="submit"
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 rounded-full text-base"
           >
             ENTRAR
           </Button>
 
-          {/* ✅ BOTÃO GOV.BR ADICIONADO AQUI */}
-          <Button 
+          <Button
             type="button"
             onClick={handleGovBrLogin}
             className="w-full bg-govbr hover:bg-govbr/90 text-secondary-foreground font-medium h-12 rounded-full text-base flex items-center justify-center gap-2"
@@ -80,12 +79,13 @@ const LoginCard = () => {
           </Button>
 
           <div className="text-center pt-2">
-            <a
-              href="#"
+            <button 
+              type="button"
+              onClick={() => navigate("/cadastro")}
               className="text-sm text-primary-foreground hover:underline font-medium"
             >
               CRIAR CONTA
-            </a>
+            </button>
           </div>
         </form>
       </div>

@@ -2,44 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🎨 Definition of the design system. All colors MUST be HSL. */
+/* 
+ * Design System – Todas as cores em HSL
+ * Estrutura compatível com Tailwind + dark mode via classe .dark
+ */
 
 @layer base {
   :root {
-    /* ✅ Tema claro */
+    /* Tons neutros */
     --background: 150 10% 39%;
-    --foreground: 0 0% 10%;
+    --foreground: 40 20% 85%; /* levemente mais escuro para melhor contraste */
 
+    /* Superfícies */
     --card: 100 18% 43%;
     --card-foreground: 40 20% 90%;
-
     --popover: 100 18% 43%;
     --popover-foreground: 40 20% 90%;
 
+    /* Cores funcionais */
     --primary: 100 25% 55%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 226 84% 19%;
+    /* GovBR Blue – usado como cor secundária oficial */
+    --govbr-blue: 226 84% 19%;
+    --secondary: var(--govbr-blue); /* evita duplicação e melhora manutenção */
     --secondary-foreground: 0 0% 100%;
 
+    /* Tons auxiliares */
     --muted: 150 8% 50%;
     --muted-foreground: 40 15% 80%;
-
     --accent: 40 35% 85%;
     --accent-foreground: 0 0% 10%;
 
+    /* Estados */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 8% 55%;
-    --input: 0 0% 95%;
+    /* Bordas, inputs e rings */
+    --border: 150 8% 50%; /* levemente mais suave */
+    --input: 0 0% 88%; /* fundo de input com melhor contraste */
     --ring: 100 25% 55%;
 
+    /* Raio padrão para componentes arredondados */
     --radius: 1.5rem;
 
-    /* ✅ Gov.br */
-    --govbr-blue: 226 84% 19%;
-
+    /* Sidebar – modo claro */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -51,35 +58,38 @@
   }
 
   .dark {
-    /* ✅ Tema escuro */
+    /* Tons neutros */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
+    /* Superfícies */
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
+    /* Cores funcionais */
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: var(--govbr-blue); /* mantém a cor GovBR mesmo no dark */
     --secondary-foreground: 210 40% 98%;
 
+    /* Tons auxiliares */
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
 
+    /* Estados */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
+    /* Bordas, inputs e rings */
     --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 20%; /* ligeiramente mais claro que o fundo */
     --ring: 212.7 26.8% 83.9%;
 
+    /* Sidebar – modo escuro */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -90,14 +100,19 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* ✅ Estilos base globais */
-  * {
-    @apply border border-border;
-  }
-
+  /* Estilos base globais – sem borda forçada em todos os elementos */
   body {
     @apply bg-background text-foreground;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /* Opcional: define raio global via variável CSS */
+    border-radius: var(--radius);
+  }
+
+  /* Opcional: aplicar borda apenas a componentes que precisam */
+  .card,
+  .input,
+  .popover,
+  .sidebar {
+    @apply border;
+    border-color: hsl(var(--border));
   }
 }
